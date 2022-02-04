@@ -1,9 +1,9 @@
 import "./share.css";
 import {
   PermMedia,
-  Label,
-  Room,
-  EmojiEmotions,
+  //Label,
+  //Room,
+  //EmojiEmotions,
   Cancel,
 } from "@material-ui/icons";
 import { useContext, useRef, useState } from "react";
@@ -12,7 +12,7 @@ import axios from "axios";
 
 export default function Share() {
   const { user } = useContext(AuthContext);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  //const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const desc = useRef();
   const [file, setFile] = useState(null);
 
@@ -34,7 +34,7 @@ export default function Share() {
       } catch (err) {}
     }
     try {
-      await axios.post("/posts", newPost);
+      await axios.post("https://tcnapp.herokuapp.com/posts", newPost);
       window.location.reload();
     } catch (err) {}
   };

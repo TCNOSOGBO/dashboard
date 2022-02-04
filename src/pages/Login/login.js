@@ -28,7 +28,7 @@ export default function Login() {
     if(user){
       navigate('/home')
     }
-  }, [user])  
+  }, [user, navigate])  
 
   return (
     <div className="login">

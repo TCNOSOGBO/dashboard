@@ -1,8 +1,8 @@
 import "./rightbar.css";
 //import { Users } from "../../dummyData";
 //import Online from "../Online/online";
-import {useState, useEffect} from 'react'
-import axios from "axios"
+//import {useState, useEffect} from 'react'
+//import axios from "axios"
 
 export default function Rightbar({  user }) {
   

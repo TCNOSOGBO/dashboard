@@ -17,7 +17,7 @@ export default function Post({ post }) {
 
   useEffect(()=>{
     const fetchPosts = async()=>{
-        const res = await axios.get(`http://localhost:8800/api/users?userId=${post.userId}`)
+        const res = await axios.get(`https://tcnapp.herokuapp.com/api/users?userId=${post.userId}`)
         setUser(res.data)
     }
     fetchPosts()

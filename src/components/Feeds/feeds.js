@@ -10,7 +10,7 @@ export default function Feed() {
 
 useEffect(()=>{
   const fetch = async()=>{
-      const res = await axios.get("http://localhost:8800/api/posts/all")
+      const res = await axios.get("https://tcnapp.herokuapp.com/api/posts/all")
       setPosts(res.data)
   }
   fetch()
