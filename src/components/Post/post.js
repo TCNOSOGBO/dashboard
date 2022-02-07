@@ -30,7 +30,7 @@ export default function Post({ post }) {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src={PF+user.profilePicture}
+              src={`assets/${user.profilePicture}`}
               alt=""
             />
             <span className="postUsername">
@@ -44,7 +44,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.content}</span>
-          <img className="postImg" src={PF+post.image} alt="" />
+          <img className="postImg" src={`assets/${post.image}`} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
