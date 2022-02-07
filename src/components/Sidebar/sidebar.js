@@ -10,15 +10,25 @@ import {
   Event,
   Home,
   Notifications,
-  Collections
+  Collections,
+  
   //Person,
   //Share
   //School,
 } from "@material-ui/icons";
 //import { Users } from "../../dummyData";
 //import CloseFriend from "../CloseFriend/closeFriend";
+import {useNavigate} from "react-router-dom"
 
 export default function Sidebar() {
+  const navigate = useNavigate()
+
+  const logout = ()=>{
+    navigate('/login')
+    localStorage.removeItem('user')
+  }
+
+
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -83,6 +93,10 @@ export default function Sidebar() {
           <li className="sidebarListItem">
             <Group className="sidebarIcon" />
             <span className="sidebarListItemText">Users</span>
+          </li>
+          <li onClick={logout} className="sidebarListItem">
+            {/*<Login className="sidebarIcon" />*/}
+            <span className="sidebarListItemText">Log out</span>
           </li>
         </ul>
         {/*<ul className="sidebarFriendList">
