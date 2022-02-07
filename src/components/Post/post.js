@@ -9,7 +9,7 @@ export default function Post({ post }) {
   const [isLiked,setIsLiked] = useState(false)
   const [user, setUser] =useState({})
 
-  const PF = process.env.REACT_APP_PUBLIC_URL
+  
   const likeHandler =()=>{
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
