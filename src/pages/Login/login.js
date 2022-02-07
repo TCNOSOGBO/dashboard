@@ -18,17 +18,13 @@ export default function Login() {
         { email: email.current.value, password: password.current.value },
         dispatch
       );
-      navigate('/home')
+      navigate('/')
     } catch(error){
       console.log(error)
     }
   };
 
-  useEffect(()=>{
-    if(localStorage.getItem('user')){
-      navigate('/home')
-    }
-  }, [user, navigate])  
+    
 
   return (
     <div className="login">

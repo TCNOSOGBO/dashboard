@@ -34,7 +34,7 @@ export default function Register() {
       };
       try {
         await axios.post("https://tcnapp.herokuapp.com/api/auth/register", user);
-        navigate("/login");
+        navigate("/");
       } catch (err) {
         console.log(err);
       }
@@ -42,8 +42,8 @@ export default function Register() {
   };
 
   useEffect(()=>{
-    if(user){
-      navigate('/home')
+    if(user !== null){
+      navigate('/')
     }
   })
 

@@ -18,6 +18,12 @@ const AuthReducer = (state, action) => {
           loading: false,
           error: true,
         };
+      case "LOGOUT":
+        return{
+          user: null,
+          loading: false,
+          error: false,
+        };
       case "FOLLOW":
         return {
           ...state,

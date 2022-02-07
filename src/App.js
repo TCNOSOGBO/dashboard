@@ -7,17 +7,18 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-//import { useContext } from "react";
-//import { AuthContext } from "./context/AuthContext";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+
 
 function App() {
-  //const { user } = null //useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  
   return (
     <Router>
       <Routes>
-        <Route exact path="/"  element = {<Register />} />
-        <Route path = "/home" element={<Home/>} />
-        <Route path="/login" element = {<Login />} />
+        <Route exact path="/"  element = {user?<Home />:<Login />} />
+        <Route path = "/register" element={<Register />} />
       </Routes>
     </Router>
   );

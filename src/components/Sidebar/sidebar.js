@@ -18,14 +18,18 @@ import {
 } from "@material-ui/icons";
 //import { Users } from "../../dummyData";
 //import CloseFriend from "../CloseFriend/closeFriend";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext} from "react";
 
 export default function Sidebar() {
   const navigate = useNavigate()
+  const { dispatch } = useContext(AuthContext);
 
   const logout = ()=>{
-    navigate('/login')
     localStorage.removeItem('user')
+    dispatch({type:"LOGOUT"})
+    navigate('/')
   }
 
 
@@ -95,7 +99,7 @@ export default function Sidebar() {
             <span className="sidebarListItemText">Users</span>
           </li>
           <li onClick={logout} className="sidebarListItem">
-            {/*<Login className="sidebarIcon" />*/}
+            {/*<LogoutIcon className="sidebarIcon" />*/}
             <span className="sidebarListItemText">Log out</span>
           </li>
         </ul>
